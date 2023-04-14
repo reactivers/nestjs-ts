@@ -4,13 +4,12 @@ RUN npm i -g yarn
 
 FROM base as build
 WORKDIR /usr/src/reactivers
-COPY . .
-RUN rm -rf node_modules
-RUN rm -rf dist
+COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile --network-timeout 100000
+COPY . .
+RUN yarn build
 RUN yarn test
 RUN yarn test:e2e
-RUN yarn build
 
 FROM base as prod
 WORKDIR /usr/src/app/reactivers

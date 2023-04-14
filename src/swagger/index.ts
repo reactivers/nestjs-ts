@@ -4,7 +4,7 @@ import getApiDocument from "./api";
 
 const setupSwagger = (app: INestApplication) => {
   const apiDocument = getApiDocument(app);
-  SwaggerModule.setup("api", app, apiDocument);
+  SwaggerModule.setup("docs", app, apiDocument);
 };
 
 export default setupSwagger;
