@@ -7,5 +7,5 @@ services:
     environment:
       JWT_SECRET: ${JWT_SECRET}
     ports:
-      - "4013:3000"
-    container_name: reactivers-backend2
+      - "4012:3000"
+    container_name: reactivers-backend
